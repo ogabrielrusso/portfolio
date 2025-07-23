@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags essenciais para SEO e responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de desenvolvimento web e WordPress">
+    <meta name="keywords"
+ content="Gabriel Russo Teixeira, Portfólio, Desenvolvimento Web, WordPress, Frontend, Backend">
+    <meta name="author" content="Gabriel Russo Teixeira">
+    <title>Gabriel Russo Teixeira | Portfólio</title>
+    
+    <!-- Importação de fontes e ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho fixo com navegação -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- Logo do portfólio -->
+                <div class="logo">Portfólio</div>
+                
+                <!-- Menu de navegação principal -->
+                <ul class="nav-links">
+                    <li><a href="#about">Início</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                
+                <!-- Botão do menu mobile (hambúrguer) -->
+                <div class="menu-btn" aria-label="Menu de navegação">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção "Sobre Mim" - Apresentação pessoal -->
+    <section id="about">
+        <div class="container">
+            <!--<h2 class="section-title">Sobre Mim</h2>-->
+            <div class="about-container">
+                <!-- Container da foto de perfil -->
+                <div class="about-image">
+                    <div class="profile-photo">
+                        <img src="assets/img/Gabriel.jpg" alt="Minha foto de perfil">
+                    </div>
+                </div>
+                
+                <!-- Container do texto de apresentação -->
+                <div class="about-text">
+                    <h3>Olá, eu sou Gabriel Russo Teixeira</h3>
+                    <h4>Desenvolvedor Web</h4>
+                    
+                    <!-- Parágrafos de apresentação profissional -->
+                    <p>
+                        Sou desenvolvedor web com foco em Frontend e especialização em WordPress, dedicado a transformar
+                        ideias em experiências digitais de alto impacto. Apaixonado por tecnologia, atuo na criação de
+                        sites responsivos e modernos, utilizando WordPress, Elementor e ferramentas como Figma, sempre
+                        aplicando os princípios de UX e UI para garantir usabilidade e estética.
+                    </p>
+                    <p>
+                        Ao longo da minha trajetória, aprofundei meus conhecimentos em Marketing Digital, adquirindo
+                        experiência em CRM, SEO, SEM, E-mail Marketing e Marketing de Conteúdo para potencializar
+                        campanhas de divulgação de marcas e empresas. Estou sempre em busca de novos aprendizados e
+                        desafios, atualmente expandindo meus conhecimentos em desenvolvimento Fullstack e Automação com
+                        Inteligência Artificial.
+                    </p>
+                    <p>
+                        Sigo aprimorando minhas habilidades e participando de projetos inovadores que contribuem para
+                        meu crescimento profissional e pessoal.
+                    </p>
+
+                    <!-- Botão para download do currículo -->
+                    <div class="cv-button-container">
+                        <a href="assets/Document/My Resume.pdf" class="cv-button" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção "Habilidades" - Cards com tecnologias e competências -->
+    <section id="skills">
+        <div class="container">
+            <!--<h2 class="section-title">Minhas Habilidades</h2>-->
+            <div class="skills-container">
+                <!-- Card de habilidades Front-end -->
+                <div class="skills-card">
+                    <div class="card-header">
+                        <div class="icon frontend-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="card-title">Front-end</h3>
+                    </div>
+                    <div class="skills-tags">
+                        <div class="skill-tag frontend-tag">HTML5</div>
+                        <div class="skill-tag frontend-tag">CSS3</div>
+                        <div class="skill-tag frontend-tag">JavaScript</div>
+                        <div class="skill-tag frontend-tag">SASS</div>
+                        <div class="skill-tag frontend-tag">Bootstrap</div>
+                        <div class="skill-tag frontend-tag">Tailwind CSS</div>
+                    </div>
+                </div>
+
+                <!-- Card de habilidades Back-end -->
+                <div class="skills-card">
+                    <div class="card-header">
+                        <div class="icon backend-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="card-title">Back-end</h3>
+                    </div>
+                    <div class="skills-tags">
+                        <div class="skill-tag backend-tag">Node.js</div>
+                        <div class="skill-tag backend-tag">Python</div>
+                        <div class="skill-tag backend-tag">Java</div>
+                        <div class="skill-tag backend-tag">MySQL</div>
+                        <div class="skill-tag backend-tag">MongoDB</div>
+
+                    </div>
+                </div>
+
+                <!-- Card de ferramentas e tecnologias -->
+                <div class="skills-card">
+                    <div class="card-header">
+                        <div class="icon tools-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="card-title">Ferramentas</h3>
+                    </div>
+                    <div class="skills-tags">
+                        <div class="skill-tag tools-tag">Git</div>
+                        <div class="skill-tag tools-tag">GitHub</div>
+                        <div class="skill-tag tools-tag">VS Code</div>
+                        <div class="skill-tag tools-tag">Vercel</div>
+                        <div class="skill-tag tools-tag">Netlify</div>
+                        <div class="skill-tag tools-tag">Docker</div>
+                        <div class="skill-tag tools-tag">WordPress</div>
+                        <div class="skill-tag tools-tag">Elementor</div>
+                        <div class="skill-tag tools-tag">Canva</div>
+                        <div class="skill-tag tools-tag">Figma</div>
+                        <div class="skill-tag tools-tag">Photoshop</div>
+                        <div class="skill-tag tools-tag">Illustrator</div>
+                        <div class="skill-tag tools-tag">Davinci Resolve</div>
+                    </div>
+                </div>
+
+                <!-- Card de soft skills -->
+                <div class="skills-card">
+                    <div class="card-header">
+                        <div class="icon soft-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title">Soft Skills</h3>
+                    </div>
+                    <div class="skills-tags">
+                        <div class="skill-tag soft-tag">Trabalho em equipe</div>
+                        <div class="skill-tag soft-tag">Comunicação</div>
+                        <div class="skill-tag soft-tag">Resolução de problemas</div>
+                        <div class="skill-tag soft-tag">Gestão de tempo</div>
+                        <div class="skill-tag soft-tag">Adaptabilidade</div>
+                        <div class="skill-tag soft-tag">Criatividade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção "Projetos" - Portfólio de trabalhos -->
+    <section id="projects">
+        <div class="container">
+            <!--<h2 class="section-title">Meus Projetos</h2>-->
+
+            <!-- Sistema de abas para organizar projetos por categoria -->
+            <div class="projects-tabs">
+                <button class="tab-btn active" data-target="code-projects">Projetos em Código</button>
+                <button class="tab-btn" data-target="wordpress-projects">Sites em WordPress</button>
+            </div>
+
+            <!-- Conteúdo da aba "Projetos em Código" -->
+            <div class="tab-content active" id="code-projects">
+                <div class="projects-grid">
+                    <!-- Card do Projeto 1 - Clone Wikipédia -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/wikipedia-clone.png" alt="Imagem do Projeto 1">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> O maior desafio foi compreender toda a estrutura detalhada da Wikipédia, que possui muitos elementos, menus e estilos diferentes. Foi necessário analisar o código-fonte, identificar padrões e adaptar o layout para garantir fidelidade visual e responsividade.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Estudei a organização dos elementos, utilizei HTML semântico e CSS personalizado para replicar o visual, e ajustei o layout para diferentes tamanhos de tela. O processo me ensinou a importância de observar detalhes e a lógica por trás de grandes sites.
+                            </p>
+                            <!--<div class="project-category">Web App</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Clone da página Wikipédia</h3>
+                            <p>Projeto de clonagem da página da Wikipédia sobre Alan Turing, com o objetivo de praticar HTML e CSS, além de entender a estrutura de grandes portais de conteúdo.</p>
+                            <div class="project-tech">
+                                <!--<span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://wikipedia-clone-green.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/wikipedia-clone/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 2 - Clone YouTube (reprodução) -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/youtube-clone-video-em-reproducao.png" alt="Imagem do Projeto 2">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> O principal desafio foi garantir que todos os controles, botões e áreas de vídeo funcionassem bem em diferentes dispositivos, mantendo a experiência do usuário semelhante à original.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Implementei técnicas de CSS para alinhar e distribuir os elementos, testei em vários tamanhos de tela e utilizei boas práticas de responsividade. O projeto me ajudou a entender como criar interfaces intuitivas e agradáveis.
+                            </p>
+                            <!--<div class="project-category">API</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Réplica da página de reprodução de vídeo do Youtube</h3>
+                            <p>Réplica da interface de reprodução de vídeos do YouTube, desenvolvida para praticar habilidades em HTML e CSS, focando em responsividade e usabilidade.</p>
+                            <div class="project-tech">
+                                <!--<span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://youtube-replica-video-em-reproducao.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/youtube-replica-video-em-reproducao/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 3 - Clone YouTube (listagem) -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/youtube-listagem-de-videos-clone.png" alt="Imagem do Projeto 3">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> O desafio foi criar uma grade de vídeos que se adaptasse ao espaço disponível, mantendo a organização visual mesmo em telas pequenas.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Utilizei CSS Grid para estruturar a página, ajustando espaçamentos e tamanhos para garantir alinhamento e responsividade. Aprendi a importância de pensar na experiência do usuário ao navegar pelo conteúdo.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Clone da página de listagem do Youtube</h3>
+                            <p>Clone da interface de listagem de vídeos do YouTube, com foco em Grid Layout e responsividade.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://clone-listagem-do-youtube-css-grid.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/clone-listagem-do-youtube-css-grid/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 4 - Catálogo de Cafeteria -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/site-catalogo-bootstrap.png" alt="Imagem do Projeto 4">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> Unir a praticidade dos componentes do Bootstrap com um visual personalizado, fugindo do padrão genérico e trazendo identidade ao site.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Combinei recursos prontos do Bootstrap com customizações em CSS, criando um layout moderno, funcional e fácil de navegar.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Catálogo de Cafeteria com Bootstrap</h3>
+                            <p>Site responsivo para cafeteria, criado com HTML, CSS e Bootstrap 5, apresentando um design moderno com carrossel de imagens e cartões de menu.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://site-catalago-bootstrap.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/site-catalago-bootstrap/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 5 - Clone HBO Max -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/hbo-max-clone.png" alt="Imagem do Projeto 5">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> Recriar o visual marcante do HBO Max, com atenção aos detalhes de design, cores e responsividade.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Estudei o site original, escolhi cuidadosamente as cores e fontes, e montei o layout de forma fiel ao serviço de streaming, garantindo acessibilidade e responsividade.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Clone HBO Max</h3>
+                            <p>Réplica visual do site HBO Max, com foco em cores vibrantes, banners e seções diferenciadas.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://clone-hbo-max-eight.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/clone-hbo-max/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 6 - Projeto Tributo -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/tributo-foto.png" alt="Imagem do Projeto 6">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> Criar uma página informativa e visualmente agradável usando apenas recursos básicos.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Estruturei o conteúdo em blocos, utilizei cores e fontes para destacar informações importantes e deixei a navegação simples e fluida.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Projeto Tributo</h3>
+                            <p>Página tributo desenvolvida apenas com HTML e CSS, focando em estrutura clara e visual interessante.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://projeto-tributo-freecodecamp.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/projeto-tributo-freecodecamp/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 7 - Projeto Documentação -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/documentacao-foto.png" alt="Imagem do Projeto 7">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> Organizar grande quantidade de informações sem sobrecarregar o usuário.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Separei o conteúdo em tópicos, utilizei listas e títulos para facilitar a leitura e deixei o visual limpo, ajudando o visitante a encontrar rapidamente o que procura.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Projeto Documentação</h3>
+                            <p>Página de documentação clara e organizada, com navegação fácil e visual limpo.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://projeto-documentacao-freecodecamp.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/projeto-documentacao-freecodecamp/tree/main" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto 8 - Modelo -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="assets/img/site-doceria-da-mel.png" alt="Imagem do Projeto 8">
+                            <p class="project-challenge-solution">
+                                <span class="challenge-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                <strong>Desafio:</strong> Organizar grande quantidade de informações sem sobrecarregar o usuário.<br>
+                                <span class="solution-icon"><i class="fas fa-lightbulb"></i></span>
+                                <strong>Solução:</strong> Separei o conteúdo em tópicos, utilizei listas e títulos para facilitar a leitura e deixei o visual limpo, ajudando o visitante a encontrar rapidamente o que procura.
+                            </p>
+                            <!--<div class="project-category">Mobile</div>-->
+                        </div>
+                        <div class="project-content">
+                            <h3>Projeto Documentação</h3>
+                            <p>Site catálogo para uma Doceria elegante que encanta com seus produtos.</p>
+                            <div class="project-tech">
+                                <!--<span>Vue.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>-->
+                            </div>
+                            <div class="project-links">
+                                <a href="https://doces-da-mel.vercel.app/" class="project-link" target="_blank"><i class="fas fa-link"></i> Acessar</a>
+                                <a href="https://github.com/ogabrielrusso/doces-da-mel" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Conteúdo da aba "Sites em WordPress" -->
+            <div class="tab-content" id="wordpress-projects">
+                <div class="projects-grid">
+                   
+                    <!-- Card do Projeto WordPress 1 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <!-- Exemplo com vídeo local -->
+                            <video controls poster="assets/img/site-doceria-foto.png" width="100%" style="border-radius:12px;">
+                                <source src="assets/movies/site-doceria.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeo HTML5.
+                            </video>
+                            <div class="project-category">Institucional</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Site WordPress 1</h3>
+                            <p>Descrição:
+                                Site desenvolvido para uma doceria local, com foco em apresentar o cardápio de forma atrativa e facilitar pedidos online. O layout foi pensado para transmitir doçura e aconchego, utilizando cores suaves e imagens de alta qualidade dos produtos.<br>
+                                <strong>Desafios:</strong>
+                                O maior desafio foi criar uma navegação simples, mas que permitisse ao usuário visualizar rapidamente todas as opções do cardápio, sem se perder em muitas páginas. Além disso, a integração com plugins de formulário para pedidos personalizados exigiu atenção especial para garantir que todos os detalhes do pedido fossem capturados corretamente.<br>
+                                <strong>Soluções:</strong>
+                                Implementei menus dinâmicos com o plugin Elementor, utilizei o Yoast SEO para melhorar o ranqueamento local e personalizei formulários para pedidos, garantindo uma experiência fluida tanto no desktop quanto no mobile.
+                            </p>
+                            <div class="project-tech">
+                                <span>WordPress</span>
+                                <span>Elementor</span>
+                                <span>Yoast SEO</span>
+                            </div>
+                            <div class="project-links">
+                                <!--<a href="#" class="project-link"><i class="fas fa-link"></i> Visitar Site</a>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto WordPress 2 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <!-- Exemplo com vídeo local -->
+                            <video controls poster="assets/img/site-petvet-foto.png" width="100%" style="border-radius:12px;">
+                                <source src="assets/movies/site-petvet.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeo HTML5.
+                            </video>
+                            <div class="project-category">Serviços Online</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Site WordPress 2</h3>
+                            <p>Descrição:
+                                Site institucional para uma clínica veterinária, com informações sobre serviços, equipe e agendamento de consultas. O objetivo era transmitir confiança e carinho, destacando o cuidado com os pets.<br>
+                                <strong>Desafios:</strong>
+                                O principal desafio foi organizar uma grande quantidade de informações (serviços, equipe, dicas, localização) de forma clara e acessível, sem sobrecarregar o visitante. A integração de um sistema de agendamento online também exigiu atenção para garantir praticidade e segurança.<br>
+                                <strong>Soluções:</strong>
+                                Utilizei o construtor Elementor para criar seções bem definidas, implementei o plugin de agendamento e otimizei o SEO com o Yoast. O resultado foi um site intuitivo, com navegação fácil e visual agradável, facilitando o contato dos clientes com a clínica.
+                            </p>
+                            <div class="project-tech">
+                                <span>WordPress</span>
+                                <span>Elementor</span>
+                                <span>Yoast SEO</span>
+                                <span>Astra</span>
+                            </div>
+                            <div class="project-links">
+                                <!--<a href="#" class="project-link"><i class="fas fa-link"></i> Visitar Site</a>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card do Projeto WordPress 3 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <!-- Exemplo com vídeo local -->
+                            <video controls poster="assets/img/site-pizzaria-foto.png" width="100%" style="border-radius:12px;">
+                                <source src="assets/movies/site-pizzaria.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeo HTML5.
+                            </video>
+                            <div class="project-category">Cardápio Online</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Site WordPress 3</h3>
+                            <p>Descrição:
+                                Site para uma pizzaria tradicional, com cardápio online, fotos dos produtos e integração com delivery. O design buscou valorizar a tradição e a qualidade dos ingredientes.<br>
+                                <strong>Desafios:</strong>
+                                O desafio foi criar um cardápio visualmente atraente e fácil de atualizar, além de integrar o site com sistemas de entrega e redes sociais. A responsividade também foi fundamental, já que muitos clientes acessam pelo celular.<br>
+                                <strong>Soluções:</strong>
+                                Integrei botões de WhatsApp e Social Medias. O site ficou moderno, funcional e pronto para receber pedidos de qualquer dispositivo.
+                            </p>
+                            <div class="project-tech">
+                                <span>WordPress</span>
+                                <span>Elementor</span>
+                                <span>SEO</span>
+                            </div>
+                            <div class="project-links">
+                                <!--<a href="#" class="project-link"><i class="fas fa-link"></i> Visitar Site</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div </div>
+            </div>
+    </section>
+
+
+    <!-- Seção "Contato" - Informações de contato profissional -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <p class="section-subtitle">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos criar algo incrível juntos!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                                    <div class="contact-cards-grid">
+                    <!-- Card de contato - Email -->
+                    <div class="contact-card">
+                        <a href="mailto:gabrielrussoteixeira@zohomail.com" target="_blank" class="contact-link">
+                            <div class="contact-icon-wrapper">
+                                <i class="contact-icon fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p class="contact-text">gabrielrussoteixeira@zohomail.com</p>
+                                <span class="contact-description">Respondo em até 24 horas</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Card de contato - Telefone/WhatsApp -->
+                    <div class="contact-card">
+                        <a href="https://wa.me/5511992980415" target="_blank" class="contact-link">
+                            <div class="contact-icon-wrapper">
+                                <i class="contact-icon fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefone</h3>
+                                <p class="contact-text">(11) 99298-0415</p>
+                                <span class="contact-description">WhatsApp disponível</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Card de contato - LinkedIn -->
+                    <div class="contact-card">
+                        <a href="https://www.linkedin.com/in/gabrielrussoteixeira/" target="_blank" class="contact-link">
+                            <div class="contact-icon-wrapper">
+                                <i class="contact-icon fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p class="contact-text">Gabriel Russo Teixeira</p>
+                                <span class="contact-description">Perfil profissional</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Card de contato - GitHub -->
+                    <div class="contact-card">
+                        <a href="https://github.com/ogabrielrusso" target="_blank" class="contact-link">
+                            <div class="contact-icon-wrapper">
+                                <i class="contact-icon fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <p class="contact-text">@ogabrielrusso</p>
+                                <span class="contact-description">Projetos e código</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé do site -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Copyright com ano atualizado dinamicamente -->
+                <p class="copyright">&copy; <span id="current-year"></span> | Desenvolvido por Gabriel Russo Teixeira
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

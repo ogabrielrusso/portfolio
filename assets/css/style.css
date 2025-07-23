@@ -1,0 +1,1314 @@
+/* ===== VARIÁVEIS CSS (CUSTOM PROPERTIES) ===== */
+/* Define as cores e valores principais do tema do site */
+:root {
+    --primary-color: #7fb069;    /* Verde pastel elegante - cor principal */
+    --secondary-color: #5a8c5a;  /* Verde mais escuro - cor secundária */
+    --accent-green: #42b883;     /* Verde vibrante para destaques */
+    --accent-yellow: #e6a700;    /* Amarelo para alertas e destaques */
+    --dark-bg: #2d2e32;          /* Fundo escuro para seções */
+    --light-bg: #f8f9fa;         /* Fundo claro para o corpo */
+    --white: #ffffff;             /* Branco puro */
+    --gray-text: #555555;         /* Cinza para textos secundários */
+    --border-radius: 15px;        /* Raio padrão para bordas arredondadas */
+    --transition: all 0.3s ease;  /* Transição padrão para animações */
+}
+
+/* ===== RESET CSS E CONFIGURAÇÕES GERAIS ===== */
+/* Remove margens e paddings padrão e define fonte principal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* Inclui padding e border no cálculo da largura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Fonte principal do site */
+}
+
+/* ===== CONFIGURAÇÕES DO HTML ===== */
+/* Define comportamento de scroll suave e padding para navegação fixa */
+html {
+    scroll-behavior: smooth;      /* Scroll suave ao navegar pelos links internos */
+    scroll-padding-top: 70px;    /* Espaço para o header fixo ao fazer scroll */
+}
+
+/* ===== CONFIGURAÇÕES DO BODY ===== */
+/* Define o fundo, cores e layout principal da página */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);  /* Gradiente sutil de fundo */
+    color: var(--gray-text);     /* Cor padrão do texto */
+    line-height: 1.6;            /* Espaçamento entre linhas para melhor legibilidade */
+    min-height: 100vh;           /* Altura mínima de 100% da viewport */
+    display: flex;               /* Layout flexbox para organizar seções */
+    flex-direction: column;      /* Organiza elementos em coluna */
+    position: relative;          /* Contexto de posicionamento para elementos filhos */
+}
+
+/* ===== EFEITO DE FUNDO DECORATIVO ===== */
+/* Cria um padrão sutil de gradientes radiais para dar profundidade ao fundo */
+body::before {
+    content: '';
+    position: fixed;             /* Fixo na tela, não rola com o conteúdo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(127, 176, 105, 0.03) 0%, transparent 50%),  /* Gradiente 1 */
+        radial-gradient(circle at 80% 20%, rgba(127, 176, 105, 0.03) 0%, transparent 50%),  /* Gradiente 2 */
+        radial-gradient(circle at 40% 40%, rgba(127, 176, 105, 0.02) 0%, transparent 50%);  /* Gradiente 3 */
+    pointer-events: none;        /* Permite cliques através do elemento */
+    z-index: -1;                /* Fica atrás de todo o conteúdo */
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+/* Classe utilitária para centralizar e limitar a largura do conteúdo */
+.container {
+    max-width: 1200px;          /* Largura máxima do conteúdo */
+    margin: 0 auto;              /* Centraliza o container */
+    padding: 0 20px;             /* Padding lateral para espaçamento */
+    width: 100%;                 /* Ocupa toda a largura disponível */
+}
+
+/* ===== CONFIGURAÇÕES GERAIS DAS SEÇÕES ===== */
+/* Define o espaçamento padrão para todas as seções do site */
+section {
+    padding: 80px 0;             /* Espaçamento vertical entre seções */
+    width: 100%;                 /* Ocupa toda a largura disponível */
+}
+
+/* ===== TÍTULOS DAS SEÇÕES ===== */
+/* Estilo padrão para títulos principais das seções */
+.section-title {
+    font-size: 32px;             /* Tamanho da fonte */
+    font-weight: 700;             /* Peso da fonte (negrito) */
+    color: var(--dark-bg);        /* Cor do texto */
+    margin-bottom: 50px;          /* Espaçamento inferior */
+    text-align: center;           /* Centraliza o texto */
+    position: relative;           /* Contexto para o pseudo-elemento ::after */
+}
+
+/* ===== DECORAÇÃO DOS TÍTULOS ===== */
+/* Cria uma linha decorativa abaixo dos títulos das seções */
+.section-title::after {
+    content: '';                  /* Cria o pseudo-elemento */
+    position: absolute;           /* Posicionamento absoluto */
+    bottom: -10px;               /* Posiciona 10px abaixo do título */
+    left: 50%;                   /* Centraliza horizontalmente */
+    transform: translateX(-50%);  /* Ajusta a centralização */
+    width: 70px;                 /* Largura da linha */
+    height: 4px;                 /* Altura da linha */
+    background-color: var(--primary-color);  /* Cor da linha */
+    border-radius: 2px;          /* Bordas arredondadas */
+}
+
+
+/* ===== HEADER FIXO ===== */
+/* Cabeçalho que permanece fixo no topo da página durante a navegação */
+header {
+    background: #fff;                            /* Fundo branco */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);    /* Sombra sutil para separar do conteúdo */
+    position: fixed;                             /* Fixo no topo da tela */
+    width: 100%;                                 /* Ocupa toda a largura */
+    top: 0;                                      /* Posiciona no topo */
+    z-index: 1000;                               /* Fica acima de outros elementos */
+    border-bottom: 1px solid #f0f0f0;           /* Linha sutil na parte inferior */
+}
+
+/* ===== NAVEGAÇÃO PRINCIPAL ===== */
+/* Layout flexbox para organizar logo e menu de navegação */
+nav {
+    display: flex;                               /* Layout flexbox */
+    justify-content: space-between;              /* Distribui logo e menu nas extremidades */
+    align-items: center;                         /* Centraliza verticalmente */
+    padding: 12px 0;                            /* Espaçamento vertical interno */
+}
+
+/* ===== LOGO DO SITE ===== */
+/* Estilo do logo/identidade visual do portfólio */
+.logo {
+    font-size: 22px;                            /* Tamanho da fonte */
+    font-weight: 700;                            /* Peso da fonte (negrito) */
+    color: var(--primary-color);                 /* Cor verde do tema */
+    letter-spacing: -0.5px;                      /* Ajuste fino do espaçamento entre letras */
+}
+
+/* ===== DECORAÇÃO DO LOGO ===== */
+/* Linha decorativa abaixo do logo */
+.logo::after {
+    content: '';                                   /* Cria o pseudo-elemento */
+    position: absolute;                            /* Posicionamento absoluto */
+    bottom: -2px;                                 /* Posiciona 2px abaixo */
+    left: 0;                                      /* Alinha à esquerda */
+    width: 100%;                                  /* Ocupa toda a largura */
+    height: 2px;                                  /* Altura da linha */
+    background: linear-gradient(90deg, var(--primary-color), transparent);  /* Gradiente da esquerda para direita */
+    border-radius: 1px;                           /* Bordas arredondadas */
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+/* Lista de links do menu principal */
+.nav-links {
+    display: flex;                               /* Layout flexbox horizontal */
+    list-style: none;                            /* Remove marcadores da lista */
+    gap: 32px;                                   /* Espaçamento entre os links */
+}
+
+/* ===== ITENS DO MENU ===== */
+/* Remove margens padrão dos itens da lista */
+.nav-links li {
+    margin: 0;                                     /* Remove margens padrão */
+}
+
+/* ===== LINKS DO MENU ===== */
+/* Estilo dos links de navegação com efeitos de hover */
+.nav-links a {
+    text-decoration: none;                        /* Remove sublinhado */
+    color: #222;                                  /* Cor do texto */
+    font-weight: 500;                             /* Peso da fonte (semi-negrito) */
+    font-size: 15px;                              /* Tamanho da fonte */
+    transition: color 0.2s;                       /* Transição suave na cor */
+    padding: 8px 0;                               /* Espaçamento vertical */
+    position: relative;                           /* Contexto para pseudo-elementos */
+    letter-spacing: 0.2px;                       /* Espaçamento entre letras */
+}
+
+/* ===== EFEITO HOVER NOS LINKS ===== */
+/* Muda a cor do link quando o mouse passa por cima ou recebe foco */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary-color);                  /* Cor verde do tema */
+}
+
+/* ===== LINHA DECORATIVA DOS LINKS ===== */
+/* Cria uma linha que aparece abaixo do link no hover */
+.nav-links a::before {
+    content: '';                                  /* Cria o pseudo-elemento */
+    position: absolute;                           /* Posicionamento absoluto */
+    bottom: 0;                                   /* Posiciona na parte inferior */
+    left: 50%;                                   /* Centraliza horizontalmente */
+    width: 0;                                    /* Inicialmente sem largura */
+    height: 2px;                                 /* Altura da linha */
+    background: var(--primary-color);             /* Cor da linha */
+    transition: width 0.2s, left 0.2s;           /* Transição suave */
+    transform: translateX(-50%);                  /* Ajusta a centralização */
+    border-radius: 1px;                          /* Bordas arredondadas */
+}
+
+/* ===== ANIMAÇÃO DA LINHA NO HOVER ===== */
+/* Expande a linha para ocupar toda a largura do link */
+.nav-links a:hover::before,
+.nav-links a:focus::before {
+    width: 100%;                                  /* Ocupa toda a largura do link */
+    left: 0;                                      /* Alinha à esquerda */
+}
+
+/* ===== BOTÃO DO MENU MOBILE ===== */
+/* Botão hambúrguer que aparece apenas em telas pequenas */
+.menu-btn {
+    display: none;                                /* Inicialmente oculto */
+    cursor: pointer;                              /* Cursor de ponteiro */
+    font-size: 24px;                             /* Tamanho do ícone */
+}
+
+
+/* ===== SEÇÃO "SOBRE MIM" ===== */
+/* Primeira seção do site com apresentação pessoal */
+#about {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);  /* Gradiente sutil de fundo */
+    padding-top: 120px;                            /* Espaçamento extra no topo para o header fixo */
+    position: relative;                             /* Contexto para elementos filhos */
+}
+
+/* ===== EFEITO DE FUNDO DA SEÇÃO SOBRE ===== */
+/* Padrão sutil de pontos no fundo da seção sobre */
+#about::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e9ecef" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');  /* Padrão de pontos */
+    opacity: 0.5;                                  /* Transparência */
+    z-index: 1;                                    /* Fica atrás do conteúdo */
+}
+
+#about .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== CONTAINER DA SEÇÃO SOBRE ===== */
+/* Layout flexbox para organizar foto e texto lado a lado */
+.about-container {
+    display: flex;                                /* Layout flexbox */
+    align-items: center;                          /* Centraliza verticalmente */
+    gap: 50px;                                   /* Espaçamento entre foto e texto */
+}
+
+/* ===== CONTAINER DA IMAGEM ===== */
+/* Área que contém a foto de perfil */
+.about-image {
+    flex: 1;                                       /* Ocupa o espaço disponível */
+    display: flex;                                 /* Layout flexbox */
+    justify-content: center;                        /* Centraliza horizontalmente */
+}
+
+/* ===== FOTO DE PERFIL ===== */
+/* Círculo que contém a foto de perfil */
+.profile-photo {
+    width: 280px;                                  /* Largura fixa */
+    height: 280px;                                 /* Altura fixa */
+    border-radius: 50%;                            /* Formato circular */
+    overflow: hidden;                              /* Esconde partes da imagem */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+}
+
+/* ===== IMAGEM DA FOTO DE PERFIL ===== */
+/* Estilo da imagem dentro do círculo */
+.profile-photo img {
+    width: 100%;                                   /* Ocupa toda a largura */
+    height: 100%;                                  /* Ocupa toda a altura */
+    object-fit: cover;                             /* Mantém proporção e cobre todo o espaço */
+    transition: transform 0.5s ease;               /* Transição suave para zoom */
+}
+
+/* ===== ZOOM NA FOTO NO HOVER ===== */
+/* Efeito de zoom na foto quando o mouse passa por cima */
+.profile-photo:hover img {
+    transform: scale(1.05);                        /* Aumenta a imagem em 5% */
+}
+
+/* ===== CONTAINER DO TEXTO SOBRE ===== */
+/* Área que contém o texto de apresentação */
+.about-text {
+    flex: 1;                                     /* Ocupa o espaço restante disponível */
+}
+
+/* ===== TÍTULO PRINCIPAL DA SEÇÃO SOBRE ===== */
+/* Nome da pessoa com destaque */
+.about-text h3 {
+    font-size: 32px;                             /* Tamanho da fonte */
+    font-weight: 700;                             /* Peso da fonte (negrito) */
+    color: var(--dark-bg);                        /* Cor escura para destaque */
+    margin-bottom: 5px;                           /* Espaçamento inferior */
+}
+
+/* ===== SUBTÍTULO DA SEÇÃO SOBRE ===== */
+/* Cargo/profissão da pessoa */
+.about-text h4 {
+    font-size: 22px;                              /* Tamanho da fonte */
+    font-weight: 500;                              /* Peso da fonte (semi-negrito) */
+    color: var(--primary-color);                   /* Cor verde do tema */
+    margin-bottom: 20px;                           /* Espaçamento inferior */
+}
+
+/* ===== DESTAQUE DE TEXTO ===== */
+/* Classe para destacar palavras importantes no texto */
+.highlight {
+    color: var(--primary-color);                   /* Cor verde para destaque */
+}
+
+/* ===== PARÁGRAFOS DA SEÇÃO SOBRE ===== */
+/* Espaçamento entre os parágrafos de apresentação */
+.about-text p {
+    margin-bottom: 20px;                           /* Espaçamento inferior entre parágrafos */
+}
+
+/* ===== SEÇÃO "HABILIDADES" ===== */
+/* Seção que exibe as competências técnicas e soft skills */
+#skills {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);  /* Gradiente sutil de fundo */
+    position: relative;                             /* Contexto para elementos filhos */
+}
+
+/* ===== EFEITO DE FUNDO DA SEÇÃO HABILIDADES ===== */
+/* Padrão sutil de pontos no fundo da seção habilidades */
+#skills::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e9ecef" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');  /* Padrão de pontos */
+    opacity: 0.5;                                  /* Transparência */
+    z-index: 1;                                    /* Fica atrás do conteúdo */
+}
+
+#skills .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== CONTAINER DOS CARDS DE HABILIDADES ===== */
+/* Layout flexbox para organizar os cards de habilidades */
+.skills-container {
+    display: flex;                                 /* Layout flexbox */
+    flex-wrap: wrap;                               /* Permite quebra de linha */
+    gap: 20px;                                    /* Espaçamento entre os cards */
+    justify-content: center;                       /* Centraliza os cards */
+}
+
+/* ===== CARDS DE HABILIDADES ===== */
+/* Cards individuais que exibem cada categoria de habilidades */
+.skills-card {
+    background-color: var(--white);                /* Fundo branco */
+    border-radius: var(--border-radius);           /* Bordas arredondadas */
+    padding: 25px;                                /* Espaçamento interno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    flex: 1 1 45%;                                /* Cresce e encolhe, largura base de 45% */
+    min-width: 300px;                             /* Largura mínima */
+    transition: var(--transition);                 /* Transição suave */
+}
+
+/* ===== EFEITO HOVER NOS CARDS ===== */
+/* Animação quando o mouse passa por cima dos cards */
+.skills-card:hover {
+    transform: translateY(-5px);                   /* Move o card 5px para cima */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  /* Sombra mais pronunciada */
+}
+
+/* ===== CABEÇALHO DOS CARDS ===== */
+/* Área que contém o ícone e título de cada card */
+.card-header {
+    display: flex;                                 /* Layout flexbox */
+    align-items: center;                           /* Centraliza verticalmente */
+    margin-bottom: 20px;                          /* Espaçamento inferior */
+}
+
+/* ===== ÍCONES DOS CARDS ===== */
+/* Círculos coloridos que contêm os ícones de cada categoria */
+.icon {
+    width: 40px;                                   /* Largura fixa */
+    height: 40px;                                  /* Altura fixa */
+    margin-right: 15px;                            /* Espaçamento à direita */
+    display: flex;                                 /* Layout flexbox */
+    align-items: center;                           /* Centraliza verticalmente */
+    justify-content: center;                       /* Centraliza horizontalmente */
+    border-radius: 8px;                            /* Bordas arredondadas */
+    font-size: 18px;                               /* Tamanho do ícone */
+}
+
+/* ===== ÍCONE FRONT-END ===== */
+/* Cor azul para representar tecnologias front-end */
+.frontend-icon {
+    background-color: #e6effd;                     /* Fundo azul claro */
+    color: #5b8def;                                /* Ícone azul */
+}
+
+/* ===== ÍCONE BACK-END ===== */
+/* Cor roxa para representar tecnologias back-end */
+.backend-icon {
+    background-color: #f5e6ff;                     /* Fundo roxo claro */
+    color: #a142f4;                                /* Ícone roxo */
+}
+
+/* ===== ÍCONE FERRAMENTAS ===== */
+/* Cor verde para representar ferramentas e tecnologias */
+.tools-icon {
+    background-color: #e6ffe6;                     /* Fundo verde claro */
+    color: var(--accent-green);                    /* Ícone verde */
+}
+
+/* ===== ÍCONE SOFT SKILLS ===== */
+/* Cor amarela para representar habilidades comportamentais */
+.soft-icon {
+    background-color: #fff9e6;                     /* Fundo amarelo claro */
+    color: var(--accent-yellow);                   /* Ícone amarelo */
+}
+
+/* ===== TÍTULO DOS CARDS ===== */
+/* Nome de cada categoria de habilidades */
+.card-title {
+    font-size: 22px;                               /* Tamanho da fonte */
+    font-weight: 600;                               /* Peso da fonte (semi-negrito) */
+    color: var(--dark-bg);                          /* Cor escura */
+}
+
+/* ===== CONTAINER DAS TAGS DE HABILIDADES ===== */
+/* Área que contém as tags individuais de cada habilidade */
+.skills-tags {
+    display: flex;                                  /* Layout flexbox */
+    flex-wrap: wrap;                                /* Permite quebra de linha */
+    gap: 10px;                                     /* Espaçamento entre as tags */
+}
+
+/* ===== TAGS INDIVIDUAIS DE HABILIDADES ===== */
+/* Pílulas coloridas que representam cada habilidade específica */
+.skill-tag {
+    padding: 8px 15px;                             /* Espaçamento interno */
+    border-radius: 25px;                           /* Formato de pílula */
+    font-size: 14px;                               /* Tamanho da fonte */
+    font-weight: 500;                               /* Peso da fonte (semi-negrito) */
+    transition: var(--transition);                  /* Transição suave */
+}
+
+/* ===== EFEITO HOVER NAS TAGS ===== */
+/* Animação quando o mouse passa por cima das tags */
+.skill-tag:hover {
+    transform: translateY(-3px);                    /* Move a tag 3px para cima */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);    /* Sombra sutil */
+}
+
+/* ===== CORES DAS TAGS FRONT-END ===== */
+/* Tags azuis para tecnologias front-end */
+.frontend-tag {
+    background-color: #e6effd;                     /* Fundo azul claro */
+    color: #5b8def;                                /* Texto azul */
+}
+
+/* ===== CORES DAS TAGS BACK-END ===== */
+/* Tags roxas para tecnologias back-end */
+.backend-tag {
+    background-color: #f5e6ff;                     /* Fundo roxo claro */
+    color: #a142f4;                                /* Texto roxo */
+}
+
+/* ===== CORES DAS TAGS FERRAMENTAS ===== */
+/* Tags verdes para ferramentas e tecnologias */
+.tools-tag {
+    background-color: #e6ffe6;                     /* Fundo verde claro */
+    color: var(--accent-green);                    /* Texto verde */
+}
+
+/* ===== CORES DAS TAGS SOFT SKILLS ===== */
+/* Tags amarelas para habilidades comportamentais */
+.soft-tag {
+    background-color: #fff9e6;                     /* Fundo amarelo claro */
+    color: var(--accent-yellow);                   /* Texto amarelo */
+}
+
+
+/* ===== SEÇÃO "PROJETOS" ===== */
+/* Seção que exibe o portfólio de trabalhos realizados */
+#projects {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);  /* Gradiente sutil de fundo */
+    position: relative;                             /* Contexto para elementos filhos */
+}
+
+/* ===== EFEITO DE FUNDO DA SEÇÃO PROJETOS ===== */
+/* Padrão sutil de pontos no fundo da seção projetos */
+#projects::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e9ecef" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');  /* Padrão de pontos */
+    opacity: 0.5;                                  /* Transparência */
+    z-index: 1;                                    /* Fica atrás do conteúdo */
+}
+
+#projects .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== ABAS DOS PROJETOS ===== */
+/* Botões para alternar entre diferentes categorias de projetos */
+.projects-tabs {
+    display: flex;                                  /* Layout flexbox */
+    justify-content: center;                        /* Centraliza os botões */
+    margin-bottom: 40px;                           /* Espaçamento inferior */
+    flex-wrap: wrap;                               /* Permite quebra de linha */
+    gap: 10px;                                     /* Espaçamento entre botões */
+}
+
+/* ===== BOTÕES DAS ABAS ===== */
+/* Estilo dos botões que controlam a exibição dos projetos */
+.tab-btn {
+    padding: 10px 25px;                            /* Espaçamento interno */
+    margin: 0 10px;                                /* Margem lateral */
+    background-color: var(--light-bg);             /* Fundo claro */
+    border: none;                                   /* Remove borda */
+    border-radius: 5px;                            /* Bordas arredondadas */
+    cursor: pointer;                                /* Cursor de ponteiro */
+    font-weight: 500;                              /* Peso da fonte */
+    transition: var(--transition);                  /* Transição suave */
+}
+
+/* ===== BOTÃO ATIVO DAS ABAS ===== */
+/* Estilo do botão que está atualmente selecionado */
+.tab-btn.active {
+    background-color: var(--primary-color);         /* Fundo verde */
+    color: var(--white);                           /* Texto branco */
+}
+
+/* ===== EFEITO HOVER NOS BOTÕES ===== */
+/* Animação quando o mouse passa por cima dos botões */
+.tab-btn:hover {
+    transform: translateY(-3px);                   /* Move o botão 3px para cima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* Sombra sutil */
+}
+
+/* ===== FOCO NOS BOTÕES (ACESSIBILIDADE) ===== */
+/* Estilo quando o botão recebe foco via teclado */
+.tab-btn:focus {
+    outline: 2px solid var(--primary-color);       /* Contorno verde */
+    outline-offset: 2px;                           /* Espaçamento do contorno */
+}
+
+/* ===== GRID DOS PROJETOS ===== */
+/* Layout em grid para organizar os cards de projetos */
+.projects-grid {
+    display: grid;                                  /* Layout grid */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));  /* Colunas responsivas */
+    gap: 30px;                                     /* Espaçamento entre os cards */
+}
+
+/* ===== CARDS DOS PROJETOS ===== */
+/* Cards individuais que exibem cada projeto */
+.project-card {
+    background-color: var(--white);                /* Fundo branco */
+    border-radius: var(--border-radius);           /* Bordas arredondadas */
+    overflow: hidden;                              /* Esconde conteúdo que ultrapassa */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    transition: var(--transition);                 /* Transição suave */
+    height: 100%;                                  /* Altura igual para todos os cards */
+    display: flex;                                 /* Layout flexbox */
+    flex-direction: column;                        /* Organiza em coluna */
+}
+
+/* ===== EFEITO HOVER NOS CARDS DE PROJETOS ===== */
+/* Animação quando o mouse passa por cima dos cards */
+.project-card:hover {
+    transform: translateY(-5px);                   /* Move o card 5px para cima */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);  /* Sombra mais pronunciada */
+}
+
+/* ===== CONTAINER DA IMAGEM DO PROJETO ===== */
+/* Área que contém a imagem de cada projeto */
+.project-img {
+    height: 220px;                                 /* Altura fixa para todas as imagens */
+    overflow: hidden;                              /* Esconde partes da imagem que ultrapassam */
+    position: relative;                            /* Contexto para elementos filhos */
+}
+
+/* ===== IMAGENS DOS PROJETOS ===== */
+/* Estilo das imagens dentro dos cards de projetos */
+.project-img img {
+    width: 100%;                                   /* Ocupa toda a largura */
+    height: 100%;                                  /* Ocupa toda a altura */
+    object-fit: cover;                             /* Mantém proporção e cobre todo o espaço */
+    transition: transform 0.5s ease;               /* Transição suave para zoom */
+}
+
+/* ===== ZOOM NA IMAGEM NO HOVER ===== */
+/* Efeito de zoom na imagem quando o mouse passa por cima do card */
+.project-card:hover .project-img img {
+    transform: scale(1.05);                        /* Aumenta a imagem em 5% */
+}
+
+.project-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+/* ===== CONTEÚDO DOS CARDS DE PROJETOS ===== */
+/* Área que contém texto e links dos projetos */
+.project-content {
+    padding: 20px;                                 /* Espaçamento interno */
+    flex-grow: 1;                                  /* Ocupa o espaço restante */
+    display: flex;                                 /* Layout flexbox */
+    flex-direction: column;                        /* Organiza em coluna */
+}
+
+/* ===== TÍTULO DOS PROJETOS ===== */
+/* Nome de cada projeto */
+.project-content h3 {
+    font-size: 22px;                               /* Tamanho da fonte */
+    font-weight: 600;                               /* Peso da fonte (semi-negrito) */
+    color: var(--dark-bg);                          /* Cor escura */
+    margin-bottom: 10px;                            /* Espaçamento inferior */
+}
+
+/* ===== DESCRIÇÃO DOS PROJETOS ===== */
+/* Texto descritivo de cada projeto */
+.project-content p {
+    font-size: 15px;                               /* Tamanho da fonte */
+    margin-bottom: 15px;                            /* Espaçamento inferior */
+    color: var(--gray-text);                       /* Cor cinza para texto secundário */
+}
+
+/* ===== TECNOLOGIAS DOS PROJETOS ===== */
+/* Área que exibe as tecnologias utilizadas em cada projeto */
+.project-tech {
+    display: flex;                                  /* Layout flexbox */
+    flex-wrap: wrap;                                /* Permite quebra de linha */
+    gap: 8px;                                      /* Espaçamento entre as tags */
+    margin-bottom: 15px;                            /* Espaçamento inferior */
+}
+
+/* ===== TAGS DE TECNOLOGIAS ===== */
+/* Pílulas que representam cada tecnologia utilizada */
+.project-tech span {
+    background-color: #f1f1f1;                     /* Fundo cinza claro */
+    padding: 4px 10px;                             /* Espaçamento interno */
+    border-radius: 4px;                            /* Bordas arredondadas */
+    font-size: 12px;                               /* Tamanho da fonte */
+    font-weight: 500;                               /* Peso da fonte */
+    color: var(--gray-text);                       /* Cor do texto */
+}
+
+/* ===== LINKS DOS PROJETOS ===== */
+/* Área que contém os links para acessar e ver o código */
+.project-links {
+    display: flex;                                  /* Layout flexbox */
+    gap: 15px;                                     /* Espaçamento entre os links */
+    margin-top: auto;                               /* Empurra para o final do card */
+    padding-top: 10px;                              /* Espaçamento superior */
+}
+
+/* ===== LINKS INDIVIDUAIS DOS PROJETOS ===== */
+/* Estilo dos links "Acessar" e "GitHub" */
+.project-link {
+    display: inline-flex;                           /* Layout flexbox inline */
+    align-items: center;                            /* Centraliza verticalmente */
+    gap: 5px;                                      /* Espaçamento entre ícone e texto */
+    text-decoration: none;                          /* Remove sublinhado */
+    color: var(--primary-color);                   /* Cor verde do tema */
+    font-weight: 500;                               /* Peso da fonte */
+    transition: var(--transition);                  /* Transição suave */
+}
+
+/* ===== EFEITO HOVER NOS LINKS ===== */
+/* Animação quando o mouse passa por cima dos links */
+.project-link:hover {
+    color: #3b77db;                                /* Muda para azul */
+    text-decoration: underline;                     /* Adiciona sublinhado */
+}
+
+/* ===== CONTEÚDO DAS ABAS ===== */
+/* Controle de exibição do conteúdo das abas */
+.tab-content {
+    display: none;                                  /* Inicialmente oculto */
+}
+
+.tab-content.active {
+    display: block;                                 /* Exibe quando ativo */
+}
+
+/* ===== RODAPÉ DO SITE ===== */
+/* Área inferior com informações de copyright */
+footer {
+    background: #fff;                              /* Fundo branco */
+    padding: 28px 0 18px;                         /* Espaçamento vertical */
+    margin-top: auto;                              /* Empurra para o final da página */
+    border-top: 1px solid #f0f0f0;                /* Linha sutil no topo */
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);     /* Sombra sutil */
+    position: relative;                            /* Contexto para elementos filhos */
+}
+
+/* ===== EFEITO DE FUNDO DO FOOTER ===== */
+/* Padrão sutil de pontos no fundo do footer */
+footer::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');  /* Padrão de pontos */
+    opacity: 0.5;                                  /* Transparência */
+    z-index: 1;                                    /* Fica atrás do conteúdo */
+}
+
+/* ===== CONTAINER DO FOOTER ===== */
+/* Container do conteúdo do footer */
+footer .container {
+    position: relative;                             /* Contexto de posicionamento */
+    z-index: 2;                                    /* Fica acima do fundo decorativo */
+}
+
+/* ===== CONTEÚDO DO RODAPÉ ===== */
+/* Layout do conteúdo do footer */
+.footer-content {
+    display: flex;                                  /* Layout flexbox */
+    flex-direction: column;                         /* Organiza em coluna */
+    align-items: center;                            /* Centraliza horizontalmente */
+    gap: 10px;                                     /* Espaçamento entre elementos */
+}
+
+/* ===== ÍCONES SOCIAIS ===== */
+/* Container dos ícones de redes sociais */
+.social-icons {
+    display: flex;                                  /* Layout flexbox */
+    gap: 10px;                                     /* Espaçamento entre ícones */
+    margin-bottom: 2px;                            /* Espaçamento inferior */
+}
+
+/* ===== ÍCONES SOCIAIS INDIVIDUAIS ===== */
+/* Estilo de cada ícone de rede social */
+.social-icon {
+    width: 26px;                                   /* Largura fixa */
+    height: 26px;                                  /* Altura fixa */
+    background-color: transparent;                 /* Fundo transparente */
+    color: var(--white);                          /* Cor branca */
+    border-radius: 50%;                           /* Formato circular */
+    display: flex;                                /* Layout flexbox */
+    align-items: center;                          /* Centraliza verticalmente */
+    justify-content: center;                      /* Centraliza horizontalmente */
+    font-size: 15px;                             /* Tamanho do ícone */
+    transition: background 0.2s, color 0.2s, transform 0.2s;  /* Transição suave */
+    box-shadow: none;                            /* Remove sombra */
+    border: 2px solid transparent;               /* Borda transparente */
+}
+
+/* ===== EFEITO HOVER NOS ÍCONES SOCIAIS ===== */
+/* Animação quando o mouse passa por cima dos ícones */
+.social-icon:hover,
+.social-icon:focus {
+    background-color: var(--primary-color);         /* Fundo verde */
+    color: var(--white);                           /* Texto branco */
+    border: 2px solid var(--primary-color);        /* Borda verde */
+    transform: translateY(-2px) scale(1.07);       /* Move para cima e aumenta */
+}
+
+/* ===== COPYRIGHT ===== */
+/* Texto de copyright no rodapé */
+.copyright {
+    color: var(--primary-color);                   /* Cor verde do tema */
+    font-size: 14px;                               /* Tamanho da fonte */
+    font-weight: 400;                               /* Peso da fonte (normal) */
+    text-align: center;
+    letter-spacing: 0.2px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+/* ===== SEÇÃO "CONTATO" ===== */
+/* Seção final com informações de contato profissional */
+#contact {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);  /* Gradiente sutil de fundo */
+    padding: 100px 0 80px 0;                       /* Espaçamento vertical */
+    text-align: center;                             /* Centraliza o texto */
+    position: relative;                             /* Contexto para elementos filhos */
+    overflow: hidden;                               /* Esconde conteúdo que ultrapassa */
+}
+
+/* ===== EFEITO DE FUNDO DA SEÇÃO CONTATO ===== */
+/* Padrão sutil de pontos no fundo da seção contato */
+#contact::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e9ecef" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');  /* Padrão de pontos */
+    opacity: 0.5;                                  /* Transparência */
+    z-index: 1;                                    /* Fica atrás do conteúdo */
+}
+
+#contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+    margin-bottom: 15px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    color: var(--gray-text);
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 100%;
+}
+
+/* ===== GRID DOS CARDS DE CONTATO ===== */
+/* Layout em grid para organizar os cards de contato */
+.contact-cards-grid {
+    display: grid;                                  /* Layout grid */
+    grid-template-columns: repeat(2, 1fr);         /* Duas colunas de igual tamanho */
+    gap: 40px;                                     /* Espaçamento entre os cards */
+    max-width: 1000px;                             /* Largura máxima */
+    margin: 0 auto;                                /* Centraliza o grid */
+}
+
+/* ===== CARDS DE CONTATO ===== */
+/* Cards individuais que exibem cada método de contato */
+.contact-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);  /* Gradiente sutil */
+    padding: 0;                                     /* Padding removido para o link interno */
+    border-radius: 25px;                            /* Bordas muito arredondadas */
+    box-shadow: 
+        0 20px 40px rgba(127, 176, 105, 0.1),     /* Sombra colorida */
+        0 8px 16px rgba(0, 0, 0, 0.05);          /* Sombra adicional */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);  /* Transição suave */
+    border: 2px solid transparent;                  /* Borda transparente */
+    position: relative;                             /* Contexto para pseudo-elementos */
+    overflow: hidden;                               /* Esconde conteúdo que ultrapassa */
+    min-height: 160px;                             /* Altura mínima */
+    cursor: pointer;                                /* Cursor de ponteiro */
+}
+
+/* ===== EFEITO DE BRILHO NOS CARDS ===== */
+/* Animação de brilho que passa pelos cards no hover */
+.contact-card::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: -100%;                                   /* Inicialmente fora da área visível */
+    width: 100%;                                   /* Ocupa toda a largura */
+    height: 100%;                                  /* Ocupa toda a altura */
+    background: linear-gradient(90deg, transparent, rgba(127, 176, 105, 0.1), transparent);  /* Gradiente de brilho */
+    transition: left 0.6s ease;                    /* Transição suave */
+}
+
+/* ===== ANIMAÇÃO DO BRILHO NO HOVER ===== */
+/* Move o brilho da esquerda para a direita no hover */
+.contact-card:hover::before {
+    left: 100%;                                    /* Move para fora da área visível à direita */
+}
+
+/* ===== EFEITO HOVER NOS CARDS DE CONTATO ===== */
+/* Animação quando o mouse passa por cima dos cards */
+.contact-card:hover {
+    transform: translateY(-12px) scale(1.02);      /* Move para cima e aumenta ligeiramente */
+    box-shadow: 
+        0 30px 60px rgba(127, 176, 105, 0.2),     /* Sombra mais pronunciada */
+        0 15px 30px rgba(0, 0, 0, 0.1);          /* Sombra adicional */
+    border-color: var(--primary-color);             /* Borda verde */
+}
+
+/* ===== CONTAINER DOS ÍCONES DE CONTATO ===== */
+/* Círculos coloridos que contêm os ícones de cada método de contato */
+.contact-icon-wrapper {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);  /* Gradiente verde */
+    width: 100px;                                   /* Largura fixa */
+    height: 100px;                                  /* Altura fixa */
+    border-radius: 50%;                             /* Formato circular */
+    display: flex;                                  /* Layout flexbox */
+    align-items: center;                            /* Centraliza verticalmente */
+    justify-content: center;                        /* Centraliza horizontalmente */
+    flex-shrink: 0;                                 /* Não encolhe */
+    box-shadow: 
+        0 10px 25px rgba(127, 176, 105, 0.3),     /* Sombra colorida */
+        0 5px 15px rgba(90, 140, 90, 0.2);       /* Sombra adicional */
+    position: relative;                             /* Contexto para pseudo-elementos */
+    overflow: hidden;                               /* Esconde conteúdo que ultrapassa */
+}
+
+/* ===== EFEITO DE BRILHO NO ÍCONE ===== */
+/* Animação de brilho que passa pelo ícone no hover */
+.contact-icon-wrapper::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: -50%;                                     /* Posiciona acima da área visível */
+    left: -50%;                                    /* Posiciona à esquerda da área visível */
+    width: 200%;                                   /* Ocupa o dobro da largura */
+    height: 200%;                                  /* Ocupa o dobro da altura */
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);  /* Gradiente de brilho */
+    transform: rotate(45deg);                      /* Rotaciona 45 graus */
+    transition: transform 0.6s ease;               /* Transição suave */
+}
+
+/* ===== ANIMAÇÃO DO BRILHO NO HOVER ===== */
+/* Move o brilho diagonalmente no hover */
+.contact-card:hover .contact-icon-wrapper::before {
+    transform: rotate(45deg) translate(50%, 50%);   /* Move diagonalmente */
+}
+
+/* ===== ÍCONES DE CONTATO ===== */
+/* Ícones dentro dos círculos coloridos */
+.contact-icon {
+    font-size: 40px;                               /* Tamanho do ícone */
+    color: var(--white);                           /* Cor branca */
+    margin: 0;                                     /* Remove margens */
+    position: relative;                            /* Contexto de posicionamento */
+    z-index: 2;                                    /* Fica acima dos pseudo-elementos */
+}
+
+/* ===== DETALHES DE CONTATO ===== */
+/* Área que contém o texto de cada método de contato */
+.contact-details {
+    flex: 1;                                       /* Ocupa o espaço restante */
+    text-align: left;                              /* Alinha o texto à esquerda */
+}
+
+/* ===== TÍTULO DOS CARDS DE CONTATO ===== */
+/* Nome de cada método de contato (Email, Telefone, etc.) */
+.contact-details h3 {
+    font-size: 26px;                               /* Tamanho da fonte */
+    font-weight: 800;                               /* Peso da fonte (extra negrito) */
+    color: var(--dark-bg);                          /* Cor escura */
+    margin-bottom: 12px;                            /* Espaçamento inferior */
+    letter-spacing: -0.5px;                         /* Ajuste fino do espaçamento entre letras */
+}
+
+/* ===== TEXTO PRINCIPAL DE CONTATO ===== */
+/* Informação principal de cada método (email, telefone, etc.) */
+.contact-text {
+    font-size: 18px;                               /* Tamanho da fonte */
+    color: var(--primary-color);                   /* Cor verde do tema */
+    font-weight: 700;                               /* Peso da fonte (negrito) */
+    margin-bottom: 8px;                            /* Espaçamento inferior */
+    word-break: break-all;                         /* Quebra palavras longas */
+    letter-spacing: -0.3px;                        /* Ajuste fino do espaçamento entre letras */
+}
+
+/* ===== DESCRIÇÃO DE CONTATO ===== */
+/* Texto secundário que explica cada método de contato */
+.contact-description {
+    font-size: 15px;                               /* Tamanho da fonte */
+    color: var(--gray-text);                       /* Cor cinza */
+    font-style: italic;                            /* Estilo itálico */
+    font-weight: 500;                              /* Peso da fonte (semi-negrito) */
+}
+
+/* ===== LINKS DE CONTATO ===== */
+/* Links que cobrem todo o card de contato */
+.contact-link {
+    text-decoration: none;                          /* Remove sublinhado */
+    color: inherit;                                 /* Herda a cor do pai */
+    display: flex;                                  /* Layout flexbox */
+    align-items: center;                            /* Centraliza verticalmente */
+    gap: 30px;                                     /* Espaçamento entre ícone e texto */
+    width: 100%;                                    /* Ocupa toda a largura */
+    height: 100%;                                   /* Ocupa toda a altura */
+    padding: 50px 40px;                            /* Espaçamento interno */
+    transition: var(--transition);                  /* Transição suave */
+}
+
+.contact-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-card:hover .contact-link {
+    transform: scale(1.02);
+}
+
+/* ===== MENSAGEM DE CONTATO ===== */
+/* Card especial com mensagem motivacional na seção de contato */
+.contact-message {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);  /* Gradiente verde */
+    color: var(--white);                           /* Texto branco */
+    padding: 50px;                                 /* Espaçamento interno */
+    border-radius: 25px;                           /* Bordas arredondadas */
+    text-align: center;                            /* Centraliza texto */
+    max-width: 650px;                              /* Largura máxima */
+    margin: 0 auto;                                /* Centraliza horizontalmente */
+    box-shadow: 
+        0 20px 40px rgba(127, 176, 105, 0.25),   /* Sombra colorida */
+        0 10px 20px rgba(90, 140, 90, 0.15);     /* Sombra adicional */
+    position: relative;                             /* Contexto para pseudo-elementos */
+    overflow: hidden;                               /* Esconde conteúdo que ultrapassa */
+}
+
+/* ===== EFEITO DE BRILHO NA MENSAGEM ===== */
+/* Animação de brilho que passa pela mensagem de contato no hover */
+.contact-message::before {
+    content: '';                                    /* Cria o pseudo-elemento */
+    position: absolute;                             /* Posicionamento absoluto */
+    top: 0;                                        /* Posiciona no topo */
+    left: 0;                                       /* Posiciona à esquerda */
+    right: 0;                                      /* Ocupa toda a largura */
+    bottom: 0;                                     /* Ocupa toda a altura */
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);  /* Gradiente de brilho */
+    transform: translateX(-100%);                   /* Inicialmente fora da área visível */
+    transition: transform 0.6s ease;                /* Transição suave */
+}
+
+/* ===== ANIMAÇÃO DO BRILHO NA MENSAGEM ===== */
+/* Move o brilho da esquerda para a direita no hover */
+.contact-message:hover::before {
+    transform: translateX(100%);                    /* Move para fora da área visível à direita */
+}
+
+/* ===== TÍTULO DA MENSAGEM DE CONTATO ===== */
+/* Título principal da mensagem motivacional */
+.contact-message h3 {
+    font-size: 32px;                               /* Tamanho da fonte */
+    font-weight: 800;                               /* Peso da fonte (extra negrito) */
+    margin-bottom: 25px;                            /* Espaçamento inferior */
+    letter-spacing: -0.5px;                         /* Ajuste fino do espaçamento entre letras */
+}
+
+/* ===== TEXTO DA MENSAGEM DE CONTATO ===== */
+/* Parágrafo da mensagem motivacional */
+.contact-message p {
+    font-size: 18px;                               /* Tamanho da fonte */
+    line-height: 1.7;                               /* Altura da linha */
+    opacity: 0.95;                                  /* Transparência sutil */
+    font-weight: 400;                               /* Peso da fonte (normal) */
+}
+
+/* ===== CONTAINER DO BOTÃO CV ===== */
+/* Área que contém o botão de download do currículo */
+.cv-button-container {
+    margin-top: 25px;                              /* Espaçamento superior */
+}
+
+/* ===== BOTÃO DE DOWNLOAD DO CV ===== */
+/* Botão estilizado para download do currículo */
+.cv-button {
+    display: inline-flex;                           /* Layout flexbox inline */
+    align-items: center;                            /* Centraliza verticalmente */
+    gap: 8px;                                      /* Espaçamento entre ícone e texto */
+    padding: 12px 28px;                            /* Espaçamento interno */
+    background-color: var(--primary-color);        /* Fundo verde */
+    color: var(--white);                           /* Texto branco */
+    text-decoration: none;                          /* Remove sublinhado */
+    border-radius: 50px;                           /* Formato de pílula */
+    font-weight: 500;                              /* Peso da fonte */
+    transition: all 0.3s ease;                     /* Transição suave */
+    border: 2px solid var(--primary-color);        /* Borda verde */
+}
+
+/* ===== ÍCONE DO BOTÃO CV ===== */
+/* Ícone de download dentro do botão */
+.cv-button i {
+    font-size: 16px;                               /* Tamanho do ícone */
+}
+
+/* ===== EFEITO HOVER NO BOTÃO CV ===== */
+/* Animação quando o mouse passa por cima do botão */
+.cv-button:hover,
+.cv-button:focus {
+    background-color: transparent;                  /* Fundo transparente */
+    color: var(--primary-color);                   /* Texto verde */
+    border-color: var(--primary-color);            /* Borda verde */
+    transform: translateY(-2px);                   /* Move 2px para cima */
+    box-shadow: 0 4px 12px rgba(127, 176, 105, 0.15);  /* Sombra sutil */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Media queries para adaptar o site a diferentes tamanhos de tela */
+/* ===== TABLETS E TELAS MÉDIAS ===== */
+/* Ajustes para telas até 768px de largura */
+@media (max-width: 768px) {
+    .cv-button-container {
+        text-align: center;                         /* Centraliza o botão CV */
+    }
+}
+
+/* ===== TELAS MÉDIAS ===== */
+/* Ajustes para telas até 900px de largura */
+@media (max-width: 900px) {
+    .contact-container {
+        gap: 40px;                                  /* Reduz espaçamento entre seções */
+    }
+    
+    .contact-cards-grid {
+        grid-template-columns: 1fr;                 /* Uma coluna apenas */
+        gap: 30px;                                  /* Reduz espaçamento entre cards */
+        max-width: 500px;                           /* Largura máxima reduzida */
+    }
+    
+    .contact-card {
+        text-align: center;                         /* Centraliza conteúdo */
+    }
+    
+    .contact-link {
+        flex-direction: column;                     /* Organiza em coluna */
+        padding: 40px 30px;                        /* Reduz padding */
+    }
+    
+    .contact-details {
+        text-align: center;                         /* Centraliza texto */
+    }
+    
+    .section-title {
+        font-size: 2.2rem;                         /* Reduz tamanho do título */
+    }
+}
+
+/* ===== TABLETS GRANDES ===== */
+/* Ajustes para telas até 992px de largura */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;                     /* Organiza em coluna */
+        text-align: center;                         /* Centraliza texto */
+        gap: 30px;                                  /* Reduz espaçamento */
+    }
+
+    .about-image {
+        justify-content: center;                    /* Centraliza imagem */
+    }
+
+    .profile-photo {
+        margin: 0 auto;                             /* Centraliza foto */
+    }
+
+    .skills-card {
+        min-width: 220px;                          /* Reduz largura mínima */
+    }
+}
+
+/* ===== MOBILE E TABLETS PEQUENOS ===== */
+/* Ajustes para telas até 768px de largura - menu mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;                     /* Organiza em coluna */
+        align-items: flex-start;                    /* Alinha à esquerda */
+        padding: 15px 0;                           /* Reduz padding */
+    }
+
+    .nav-links {
+        flex-direction: column;                     /* Menu em coluna */
+        width: 100%;                               /* Ocupa toda a largura */
+        background: #2d2e32;                       /* Fundo escuro */
+        position: absolute;                        /* Posicionamento absoluto */
+        top: 70px;                                 /* Posiciona abaixo do header */
+        left: 0;                                   /* Alinha à esquerda */
+        display: none;                             /* Inicialmente oculto */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);  /* Sombra sutil */
+        z-index: 1001;                             /* Fica acima do conteúdo */
+    }
+
+    .nav-links.open {
+        display: flex;                             /* Exibe quando menu está aberto */
+    }
+
+    .nav-links li {
+        margin: 15px 0;                            /* Espaçamento vertical */
+        text-align: center;                        /* Centraliza texto */
+    }
+
+    .nav-links a {
+        color: var(--white);                       /* Texto branco */
+    }
+
+    .menu-btn {
+        display: block;                            /* Mostra o botão hambúrguer */
+        position: absolute;                        /* Posicionamento absoluto */
+        right: 20px;                              /* Distância da direita */
+        top: 22px;                                /* Distância do topo */
+    }
+
+    .about-container {
+        gap: 20px;                                /* Reduz espaçamento */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;                /* Uma coluna apenas */
+    }
+
+    .skills-container {
+        flex-direction: column;                    /* Organiza em coluna */
+        gap: 15px;                                /* Reduz espaçamento */
+    }
+}
+
+/* ===== CELULARES PEQUENOS ===== */
+/* Ajustes para telas até 480px de largura - smartphones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 8px;                            /* Reduz padding lateral */
+    }
+
+    .section-title {
+        font-size: 22px;                           /* Reduz tamanho do título */
+    }
+
+    .profile-photo {
+        width: 180px;                              /* Reduz tamanho da foto */
+        height: 180px;
+    }
+
+    .about-text h3 {
+        font-size: 22px;                           /* Reduz tamanho do nome */
+    }
+
+    .about-text h4 {
+        font-size: 16px;                           /* Reduz tamanho do cargo */
+    }
+
+    .skills-card {
+        padding: 15px;                             /* Reduz padding interno */
+    }
+
+    .project-content h3 {
+        font-size: 16px;                           /* Reduz tamanho do título do projeto */
+    }
+
+    .project-content p {
+        font-size: 13px;                           /* Reduz tamanho da descrição */
+    }
+    
+    .contact-cards-grid {
+        grid-template-columns: 1fr;                /* Uma coluna apenas */
+        gap: 25px;                                 /* Reduz espaçamento */
+    }
+    
+    .contact-link {
+        padding: 30px 25px;                        /* Reduz padding */
+        gap: 25px;                                 /* Reduz espaçamento entre elementos */
+    }
+    
+    .contact-icon-wrapper {
+        width: 70px;                               /* Reduz tamanho do ícone */
+        height: 70px;
+    }
+    
+    .contact-icon {
+        font-size: 28px;                           /* Reduz tamanho do ícone */
+    }
+    
+    .contact-details h3 {
+        font-size: 20px;                           /* Reduz tamanho do título */
+    }
+    
+    .contact-text {
+        font-size: 16px;                           /* Reduz tamanho do texto */
+    }
+    
+    .contact-message {
+        padding: 30px 20px;                        /* Reduz padding */
+    }
+    
+    .contact-message h3 {
+        font-size: 24px;                           /* Reduz tamanho do título */
+    }
+    
+    .contact-message p {
+        font-size: 16px;                           /* Reduz tamanho do texto */
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;                           /* Reduz tamanho do subtítulo */
+        margin-bottom: 40px;                       /* Reduz margem inferior */
+    }
+}
+
+/* ===== CONTROLE DE SCROLL ===== */
+/* Previne scroll quando o menu mobile está aberto */
+body.menu-open {
+    overflow: hidden;                               /* Esconde a barra de rolagem */
+}
